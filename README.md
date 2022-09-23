@@ -1,5 +1,5 @@
 <p align="center">
-<img src="https://img.shields.io/badge/Keras%20-%23D00000.svg?&style=flat-square&logo=Keras&logoColor=white"/> <img src="https://img.shields.io/badge/Numpy-013220?&style=flat-square&logo=numpy"/> <img src="https://img.shields.io/badge/Pandas-130654?&style=flat-square&logo=pandas"/> <img src="https://img.shields.io/badge/Scikit--Learn-grey?&style=flat-square&logo=scikit-learn"/> 
+<img src="https://img.shields.io/badge/-HTML5-E34F26?style=flat-square&logo=html5&logoColor=white"/>
 </p>
 
 
