@@ -81,7 +81,7 @@
 	font-size: 20px;
 }
 
-button{
+.content button{
 	width: 200px;
 	padding: 15px 0;
 	text-align: center;
@@ -109,12 +109,107 @@ span{
 	transition: 0.5s;
 }
 
-button:hover span{
+.content button:hover span{
 	width: 100%;
 }
 
-button:hover{
+.content button:hover{
 	border: none;
 }
 
-.container{}
+.contact{
+	width: 80%;
+	margin:30px auto;
+}
+
+.contact h1{
+	color:white;
+	margin-bottom: 5px;
+}
+
+.contact h3{
+	color:white;
+	font-weight: 600;
+	margin-bottom: 10px;
+}
+
+.contact p{
+	color:white;
+	margin-bottom: 5px;
+}
+
+.contact-box{
+	background:transparent;
+	display: flex;
+}
+
+.contact-left{
+	flex-basis:50%;
+	padding: 40px 60px;
+	background:transparent;
+	border-right:1px solid white;
+}
+
+.contact-right{
+	flex-basis:40%;
+	padding: 40px;
+	background:transparent;
+	border-left:1px solid white;
+}
+
+.input-row{
+	display:flex;
+	justify-content: space-between;
+	margin-bottom: 20px;
+}
+
+.input-row .input-group{
+	flex-basis: 30%
+}
+
+.input-group input[type="text"]{
+	width: 100%;
+	background: transparent;
+    border: none;
+	border-bottom: 1px solid #ccc;
+	outline: none;
+	padding-bottom: 5px;
+}
+
+.input-group input::placeholder{
+	color: #ccc;
+	opacity: 1; 
+}
+
+textarea{
+	width: 100%;
+	border: 1px solid #ccc;
+	outline: none;
+	padding:10px;
+}
+.contact label{
+	margin-bottom: 6px;
+	display: block;
+	color:white;
+}
+
+.contact button{
+	background: #009688;
+	width: 100px;
+	border: none;
+	outline: none;
+	color:#fff;
+	height: 20px;
+	border-radius: 20px;
+	margin-top:10px;
+	box-shadow: 0px 5px 15px 0px rgba(28,0,181,0.3);
+}
+
+tr td:first-child{
+	padding-right: 20px;
+}
+
+tr td{
+	padding-top: 20px;
+	color:white;
+}
