@@ -69,10 +69,16 @@
 	margin-top: 80px;
 }
 
+.content h2{
+	font-size: 50px;
+	margin-top: 20px;
+}
+
 .content p{
 	margin: 20px auto;
 	font-weight: 100;
-	line-height: 25px;
+	line-height: 50px;
+	font-size: 20px;
 }
 
 button{
@@ -88,6 +94,7 @@ button{
 	cursor: pointer;
 	position: relative;
 	overflow: hidden;
+	font-size: 20px;
 }
 
 span{
@@ -109,3 +116,5 @@ button:hover span{
 button:hover{
 	border: none;
 }
+
+.container{}
