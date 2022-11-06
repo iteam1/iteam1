@@ -66,10 +66,11 @@ body{
 .content{
 	width: 100%;
 	position: absolute;
-	top: 50%;
-	transform: translateY(-50%);
+/*	top: 50%;*/
+	transform: translateY(50%);
 	text-align: center;
 	color: #fff;
+/*	margin-top: 20px;*/
 }
 
 .content h1{
