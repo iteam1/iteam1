@@ -226,3 +226,79 @@ tr td{
 	padding-top: 20px;
 	color:white;
 }
+
+.about{
+	width:100%;
+	padding:78px 0px;
+	background-color: transparent;
+}
+
+.about img{
+	height: auto;
+	width: 60%;
+}
+
+.main{
+	width: 1130px;
+	max-width: 80%;
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.text{
+	width: 550px;
+}
+
+.about h1{
+	color:white;
+	font-size: 40px;
+	text-transform: capitalize;
+	margin-bottom: 20px;
+}
+
+.about h4{
+	color:white;
+	font-size: 25px;
+	text-transform: capitalize;
+	margin-bottom: 25px;
+	letter-spacing: 2px;
+}
+
+.about span{
+	color:#009688;
+}
+
+.about p{
+	color:white;
+	letter-spacing: 1px;
+	line-height: 28px;
+	font-size: 18px;
+	margin-bottom: 45px;
+}
+
+.about button{
+	position: flex;
+	width: 200px;
+	padding: 15px 0;
+	text-align: center;
+	margin: 0px;
+	border-radius: 25px;
+	font-weight: bold;
+	border: 2px solid  #009688;
+	background: transparent;
+	color:#fff;
+	cursor: pointer;
+	position: relative;
+	overflow: hidden;
+	font-size: 20px;
+}
+
+.about button:hover span{
+	width: 100%;
+}
+
+.about button:hover{
+	border: none;
+}
