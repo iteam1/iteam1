@@ -9,7 +9,8 @@ html, body {
 }
 
 body{
-	background:linear-gradient(black,white);
+	/*background:linear-gradient(black,white);*/
+	background:black;
 }
 
 .banner{
@@ -67,7 +68,7 @@ body{
 	width: 100%;
 /*	position: absolute;*/
 /*	top: 50%;*/
-/*	transform: translateY(50%);*/
+	transform: translateY(30%);
 	text-align: center;
 	color: #fff;
 /*	margin-top: 20px;*/
