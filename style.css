@@ -321,7 +321,7 @@ tr td{
 .card h1{
 	color:white;
 	font-size: 40px;
-	text-align: : center;
+	text-align: center;
 	margin-bottom: 20px;
 }
 
@@ -404,4 +404,58 @@ tr td{
 	letter-spacing: 1px;
 	line-height: 28px;
 	font-size: 14px;
+}
+
+.projects{
+	width: 100%;
+/*	position: absolute;*/
+/*	top: 50%;*/
+	transform: translateY(5%);
+	text-align: center;
+	color: #fff;
+/*	margin-top: 20px;*/
+}
+
+.projects h1{
+	font-size: 70px;
+	margin-top: 80px;
+}
+
+.projects h2{
+	position: flex;
+	font-size: 50px;
+	margin-top: 20px;
+}
+
+.projects p{
+	position: flex;
+	margin: 20px auto;
+	font-weight: 100;
+	line-height: 50px;
+	font-size: 20px;
+}
+
+.projects button{
+	position: flex;
+	width: 200px;
+	padding: 15px 0;
+	text-align: center;
+	margin: 20px 10px;
+	border-radius: 25px;
+	font-weight: bold;
+	border: 2px solid  #009688;
+	background: transparent;
+	color:#fff;
+	cursor: pointer;
+	position: relative;
+	overflow: hidden;
+	font-size: 20px;
+}
+
+.projects button:hover span{
+	width: 100%;
+}
+
+.projects button:hover{
+	border: none;
 }
