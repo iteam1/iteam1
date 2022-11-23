@@ -235,7 +235,7 @@ tr td{
 
 .about img{
 	height: auto;
-	width: 60%;
+	width: 80%;
 }
 
 .main{
@@ -384,26 +384,27 @@ tr td{
 	font-size: 40px;
 	text-align: center;
 }
-.invite{
+.join{
 	width:100%;
-	padding:200px 0px;
+	margin-top: 100px;
+	padding:100px 0px;
 	background-color: transparent;
 }
 
-.invite h1{
+.join h1{
 	color:white;
 	font-size: 40px;
 	text-align: center;
 	margin-bottom: 20px;
 }
 
-.invite p{
+.join p{
 	color:white;
 	margin-bottom: 5px;
 	text-align: center;
 	letter-spacing: 1px;
 	line-height: 28px;
-	font-size: 14px;
+	font-size: 13px;
 }
 
 .projects{
@@ -458,4 +459,25 @@ tr td{
 
 .projects button:hover{
 	border: none;
+}
+
+.partner{
+	width:100%;
+	background-color: transparent;
+}
+
+.partner h1{
+	color:white;
+	font-size: 40px;
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+.partner p{
+	color:white;
+	margin-bottom: 5px;
+	text-align: center;
+	letter-spacing: 1px;
+	line-height: 28px;
+	font-size: 12px;
 }
