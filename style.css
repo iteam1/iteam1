@@ -151,6 +151,10 @@ span{
 	margin-bottom: 5px;
 }
 
+.contact input{
+	color:white;
+}
+
 .contact-box{
 	background:transparent;
 	display: flex;
