@@ -1,15 +1,26 @@
 <!doctype html>
-<html>
+<html lang="en">
 	<head>
-		<meta name ='viewport' content='with=device-width'>
-		<title>iteam1-home</title>
-		<link rel='stylesheet' href='style.css'>
-		<link rel = "icon" href = "./assets/logo-removebg.png" type = "image/x-icon">
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>iteam1 - Home</title>
+		<meta name="description" content="iteam1 - A team of engineers, scientists, designers and developers dedicated to AI, robotics and software development.">
+		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="modern.css">
+		<link rel="icon" href="./assets/logo-removebg.png" type="image/x-icon">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 	</head>
 	<body>
 		<div class='banner'>
 			<div class='navbar'>
-				<img src='./assets/logo-removebg.png' class='logo'>
+				<img src='./assets/logo-removebg.png' class='logo' alt="iteam1 Logo">
+				<div class="menu-toggle">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
 				<ul>
 					<li><a href='index.html'>Home</a></li>
 					<li><a href='about.html'>About</a></li>
@@ -19,13 +30,44 @@
 				</ul>
 			</div>
 			<div class='content'>
-				<h2>{ We are iteam1 }</h2>
-				<p>Check our projects on GitHub
-				</p>
-				<div>
-					<button type='button' onclick="location.href='https://github.com/iteam1'"><span></span>GitHub</button>
+				<div class="content-container">
+					<h2 class="animate-on-scroll">{ We are iteam1 }</h2>
+					<p class="animate-on-scroll">Innovating through AI, robotics, and software development.<br>Check our projects on GitHub and join us in building the future.
+					</p>
+					<div class="button-group animate-on-scroll">
+						<button type='button' onclick="location.href='https://github.com/iteam1'"><span></span>GitHub</button>
+						<button type='button' onclick="location.href='about.html'"><span></span>Learn More</button>
+					</div>
 				</div>
 			</div>
 		</div>
+		
+		<footer>
+			<div class="footer-content">
+				<div class="footer-logo">
+					<img src='./assets/logo-removebg.png' alt="iteam1 Logo">
+					<p>Small team, big ideas</p>
+				</div>
+				<div class="footer-links">
+					<h3>Quick Links</h3>
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="about.html">About</a></li>
+						<li><a href="project.html">Projects</a></li>
+						<li><a href="contact.html">Contact</a></li>
+					</ul>
+				</div>
+				<div class="footer-contact">
+					<h3>Contact Us</h3>
+					<p>Email: iteam1.official@gmail.com</p>
+					<p>Location: HCM.city, Vietnam</p>
+				</div>
+			</div>
+			<div class="footer-bottom">
+				<p>&copy; <span class="copyright-year">2023</span> iteam1. All Rights Reserved.</p>
+			</div>
+		</footer>
+		
+		<script src="script.js"></script>
 	</body>
 </html>

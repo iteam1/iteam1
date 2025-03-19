@@ -1,75 +1,151 @@
 <!doctype html>
-<html>
+<html lang="en">
 	<head>
-		<meta name ='viewport' content='with=device-width'>
-		<title>iteam1-contact</title>
-		<link rel='stylesheet' href='style.css'>
-		<link rel = "icon" href = "./assets/logo-removebg.png" type = "image/x-icon">
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>iteam1 - Contact Us</title>
+		<meta name="description" content="Get in touch with iteam1 - Contact us for collaborations, inquiries, or project discussions.">
+		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="modern.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+		<link rel="icon" href="./assets/logo-removebg.png" type="image/x-icon">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 	</head>
 	<body>
-		<div class='banner'>
-			<div class='navbar'>
-				<img src='./assets/logo-removebg.png' class='logo'>
+		<div class="banner">
+			<div class="navbar">
+				<img src="./assets/logo-removebg.png" class="logo" alt="iteam1 Logo">
+				<div class="menu-toggle">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
 				<ul>
-					<li><a href='index.html'>Home</a></li>
-					<li><a href='about.html'>About</a></li>
-					<li><a href='#'>News</a></li>
-					<li><a href='project.html'>Projects</a></li>
-					<li><a href='contact.html'>Contact</a></li>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="about.html">About</a></li>
+					<li><a href="#">News</a></li>
+					<li><a href="project.html">Projects</a></li>
+					<li><a class='active' href="contact.html">Contact</a></li>
 				</ul>
 			</div>
-			<div class= 'contact'>
-				<h1> Contact Us</h1>
-				<p>We would love to work with you, feel free to get in touch with us!</p>
-				<div class='contact-box'>
-					<div class='contact-left'>
-						<h3>Send your request</h3>
-						<form>
-							<div class='input-row'>
-								<div class='input-group'>
-									<label>Name</label>
-									<input type="text" placeholder ="Your name is">
-								</div>
-								<div class='input-group'>
-									<label>Email</label>
-									<input type="text" placeholder ="Your email is">
-								</div>
-							</div>
-							<div class='input-row'>
-								<div class='input-group'>
-									<label>Phone</label>
-									<input type="text" placeholder ="Your phone number">
-								</div>
-								<div class='input-group'>
-									<label>Title</label>
-									<input type="text" placeholder ="Your title">
-								</div>
-							</div>
-							<label>Message</label>
-							<textarea rows='6' placeholder="Your message"></textarea>
-							<button type='submit'>Submit</button>
+		</div>
 
-						</form>
-					</div>
-					<div class='contact-right'>
-						<h3>Reach us</h3>
-						<table>
-							<tr>
-								<td>Email</td>
-								<td>iteam1.official@gmail.com</td>
-							</tr>
-							<tr>
-								<td>Phone</td>
-								<td>+84 398703276</td>
-							</tr>
-							<tr>
-								<td>Address</td>
-								<td>HCM.city,VietNam</td>
-							</tr>
-						</table>
+		<main class="contact-page">
+			<section class='contact-section'>
+				<div class='container'>
+					<div class='contact'>
+						<h1 class="animate-on-scroll">Contact Us</h1>
+						<p class="animate-on-scroll">We would love to work with you! Feel free to reach out with any questions, project ideas, or collaboration opportunities.</p>
+						<div class='contact-box animate-on-scroll'>
+							<div class='contact-left'>
+								<h3>Send Your Message</h3>
+								<form>
+									<div class='input-row'>
+										<div class='input-group'>
+											<label>Name</label>
+											<input type="text" placeholder="Your name">
+										</div>
+										<div class='input-group'>
+											<label>Email</label>
+											<input type="email" placeholder="Your email address">
+										</div>
+									</div>
+									<div class='input-row'>
+										<div class='input-group'>
+											<label>Phone</label>
+											<input type="tel" placeholder="Your phone number">
+										</div>
+										<div class='input-group'>
+											<label>Subject</label>
+											<input type="text" placeholder="Message subject">
+										</div>
+									</div>
+									<label>Message</label>
+									<textarea rows='6' placeholder="Tell us about your project or inquiry"></textarea>
+									<button type='submit' class="send-button">
+										<span class="btn-text">Send Message</span>
+									</button>
+								</form>
+							</div>
+							<div class='contact-right'>
+								<h3>Reach Us</h3>
+								<div class="contact-info">
+									<div class="contact-info-item">
+										<div class="contact-info-icon">
+											<i class="fas fa-envelope"></i>
+										</div>
+										<div class="contact-info-content">
+											<h4>Email</h4>
+											<p><a href="mailto:iteam1.official@gmail.com">iteam1.official@gmail.com</a></p>
+										</div>
+									</div>
+									<div class="contact-info-item">
+										<div class="contact-info-icon">
+											<i class="fas fa-phone"></i>
+										</div>
+										<div class="contact-info-content">
+											<h4>Phone</h4>
+											<p><a href="tel:+84398703276">+84 398 703 276</a></p>
+										</div>
+									</div>
+									<div class="contact-info-item">
+										<div class="contact-info-icon">
+											<i class="fas fa-map-marker-alt"></i>
+										</div>
+										<div class="contact-info-content">
+											<h4>Address</h4>
+											<p>Ho Chi Minh City, Vietnam</p>
+										</div>
+									</div>
+								</div>
+								
+								<div class="social-links">
+									<h4>Connect With Us</h4>
+									<div class="social-buttons">
+										<a href="https://github.com/iteam1" class="social-btn">GitHub</a>
+										<a href="#" class="social-btn">LinkedIn</a>
+										<a href="#" class="social-btn">Twitter</a>
+									</div>
+									<div class="qr-code">
+										<img src="./assets/qrcode.png" alt="QR Code to connect">
+										<p>Scan to connect</p>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
+			</section>
+		</main>
+		
+		<footer>
+			<div class="footer-content">
+				<div class="footer-logo">
+					<img src='./assets/logo-removebg.png' alt="iteam1 Logo">
+					<p>Small team, big ideas</p>
+				</div>
+				<div class="footer-links">
+					<h3>Quick Links</h3>
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="about.html">About</a></li>
+						<li><a href="project.html">Projects</a></li>
+						<li><a href="contact.html">Contact</a></li>
+					</ul>
+				</div>
+				<div class="footer-contact">
+					<h3>Contact Us</h3>
+					<p>Email: iteam1.official@gmail.com</p>
+					<p>Location: HCM.city, Vietnam</p>
+				</div>
 			</div>
-		</div>
+			<div class="footer-bottom">
+				<p>&copy; <span class="copyright-year">2023</span> iteam1. All Rights Reserved.</p>
+			</div>
+		</footer>
+		
+		<script src="script.js"></script>
 	</body>
 </html>
