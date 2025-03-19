@@ -316,10 +316,13 @@ tr td{
 
 .card {
 	background: transparent;
-	width:220px;
-	height: 400px;
+	width: auto;
+	min-width: 220px;
+	height: auto;
 	margin: 10px;
 	border-radius: 15px;
+	display: flex;
+	flex-direction: column;
 }
 
 .card h1{
@@ -337,7 +340,9 @@ tr td{
 .card p{
 	color:white;
 	width:220px;
-	height: 140px;
+	height: auto;
+	min-height: 140px;
+	overflow: visible;
 /*	padding: 10px;*/
 }
 
@@ -440,6 +445,8 @@ tr td{
 	font-size: 20px;
 }
 
+/* Removing conflicting project button styles */
+/*
 .projects button{
 	position: flex;
 	width: 200px;
@@ -464,6 +471,7 @@ tr td{
 .projects button:hover{
 	border: none;
 }
+*/
 
 .partner{
 	width:100%;
