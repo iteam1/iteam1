@@ -1675,6 +1675,7 @@ footer {
   .navbar ul {
     position: fixed;
     top: 70px;
+    left: auto;
     right: -100%;
     width: 250px;
     height: 100vh;
@@ -1687,6 +1688,7 @@ footer {
 
   .navbar ul.active {
     right: 0;
+    left: auto;
   }
   
   .navbar ul li {
