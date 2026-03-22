@@ -271,7 +271,7 @@ button, .filter-btn {
 .preview-card-icon img {
   width: 28px; height: 28px;
   object-fit: contain;
-  filter: brightness(0) saturate(100%) invert(62%) sepia(60%) saturate(500%) hue-rotate(130deg);
+  filter: brightness(1.8) saturate(1.1);
 }
 .preview-card h3 {
   font-size: 1.05rem;
@@ -578,7 +578,7 @@ button, .filter-btn {
 .showcase-icon img {
   width: 38px; height: 38px;
   object-fit: contain;
-  filter: brightness(0) saturate(100%) invert(62%) sepia(60%) saturate(500%) hue-rotate(130deg);
+  filter: brightness(1.8) saturate(1.1);
 }
 .showcase-item h4 {
   font-size: 1rem;
