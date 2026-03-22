@@ -921,11 +921,236 @@ button:hover > span:first-child:not(.btn-text):not(.scroll-label) {
   .preview-grid { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
   .project-filters { gap: 8px; }
   .filter-btn { padding: 7px 16px; font-size: 0.78rem; }
-
 }
 @media (max-width: 480px) {
   .stats-bar { flex-direction: column; align-items: center; }
   .stat-item:not(:last-child)::after { display: none; }
   .page-hero h1 { font-size: 1.9rem; }
   .stat-number { font-size: 1.9rem; }
+}
+
+/* ============================================================
+   MOBILE REVAMP — comprehensive smartphone fixes
+   ============================================================ */
+
+/* M1: Remove legacy translateY from .projects wrapper (style.css) */
+.projects {
+  transform: none !important;
+}
+
+/* M2: Navbar — wider container on mobile so hamburger sits properly */
+@media (max-width: 768px) {
+  .navbar {
+    width: 92%;
+  }
+  /* Navbar dropdown top offset matches actual navbar height */
+  .navbar ul {
+    top: 60px !important;
+  }
+}
+
+/* M3: Stats bar — tighter, cleaner on small screens */
+@media (max-width: 480px) {
+  .stats-bar {
+    padding: 24px 12px 20px;
+  }
+  .stat-item {
+    padding: 10px 16px;
+    width: 100%;
+    max-width: 240px;
+  }
+}
+
+/* M4: Hero content — reduce excess padding on tiny screens */
+@media (max-width: 480px) {
+  .banner.hero-grid-bg .content {
+    padding: 50px 16px 70px !important;
+  }
+  .content h2 {
+    font-size: 1.75rem !important;
+    letter-spacing: 0 !important;
+  }
+  .content > .content-container > p {
+    font-size: 0.95rem;
+  }
+  .scroll-indicator {
+    margin-top: 30px;
+  }
+}
+
+/* M5: Preview section — single column on small screens */
+@media (max-width: 480px) {
+  .preview-section {
+    padding: 40px 16px 60px;
+  }
+  .preview-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .preview-card {
+    padding: 22px 18px;
+  }
+}
+
+/* M6: Projects page — layout & padding */
+@media (max-width: 768px) {
+  .project-grid {
+    padding: 16px;
+    gap: 20px;
+  }
+  .project-showcase {
+    padding: 0 16px 20px;
+  }
+  .projects .button-container {
+    padding: 10px 0 30px;
+  }
+}
+@media (max-width: 480px) {
+  .showcase-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    padding: 0 16px;
+  }
+  .showcase-item {
+    padding: 20px 16px;
+  }
+}
+
+/* M7: Section subtitle — "Featured Projects" label in project.html */
+.section-subtitle {
+  display: block;
+  text-align: center;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  color: var(--primary-light);
+  opacity: 0.8;
+  margin: 40px 0 20px;
+  font-family: var(--font-secondary);
+  font-weight: 600;
+}
+
+/* M8: About page — spacing & text sizes on mobile */
+@media (max-width: 768px) {
+  .about {
+    padding: 40px 0;
+  }
+  .about .main {
+    padding: 20px 16px;
+  }
+  .about .text h1 {
+    font-size: 2rem;
+  }
+  .about-stats {
+    justify-content: center;
+    gap: 8px;
+  }
+  .about-stat {
+    padding: 10px 16px;
+    min-width: 85px;
+  }
+  .about-stat .stat-number {
+    font-size: 1.7rem;
+  }
+}
+
+/* M9: Join section — mobile spacing */
+@media (max-width: 768px) {
+  .join {
+    padding: 60px 24px !important;
+    margin-top: 0 !important;
+  }
+  .join h1 {
+    font-size: 2rem;
+  }
+  .join p {
+    font-size: 0.95rem;
+  }
+}
+
+/* M10: Partner section mobile */
+@media (max-width: 768px) {
+  .partner {
+    padding: 40px 20px 50px;
+  }
+  .partner h1 {
+    font-size: 2rem;
+  }
+}
+
+/* M11: Footer — stack properly on mobile */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 40px 20px 20px;
+    gap: 28px;
+  }
+  .footer-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer-links ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .footer-links h3,
+  .footer-contact h3 {
+    margin-bottom: 10px;
+  }
+  .footer-contact p {
+    line-height: 1.8;
+  }
+}
+
+/* M12: Contact page — ensure box stacks and no overflow */
+@media (max-width: 768px) {
+  .contact {
+    width: 94%;
+    padding: 20px 0;
+  }
+  .contact-box {
+    margin-top: 20px;
+  }
+  .contact-left {
+    padding: 28px 20px !important;
+  }
+  .contact-right {
+    padding: 28px 20px;
+  }
+  .input-row {
+    flex-direction: column;
+    gap: 0;
+  }
+  .input-row .input-group,
+  .input-row .float-group {
+    flex-basis: 100%;
+    width: 100%;
+  }
+}
+
+/* M13: Prevent horizontal overflow site-wide */
+html, body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+/* M14: Banner on sub-pages — reset min-height, no overflow */
+.banner:not(.hero-grid-bg) {
+  min-height: 0;
+  overflow: visible;
+}
+
+/* M15: GitHub button on mobile */
+@media (max-width: 480px) {
+  .github-button {
+    font-size: 0.9rem;
+    padding: 12px 22px;
+    margin: 5px;
+  }
 }

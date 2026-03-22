@@ -57,81 +57,50 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Animation for scroll appearance if not already defined
+    // Animate elements when they come into view — IntersectionObserver for reliability
     function handleElementsAnimation() {
         const animateElements = document.querySelectorAll('.animate-on-scroll');
-        
-        if (animateElements.length > 0) {
-            const checkVisibility = function() {
-                animateElements.forEach(element => {
-                    const elementPosition = element.getBoundingClientRect();
-                    const windowHeight = window.innerHeight;
-                    
-                    if (elementPosition.top < windowHeight * 0.95) {
-                        element.classList.add('visible');
+        if (animateElements.length === 0) return;
+
+        if ('IntersectionObserver' in window) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
                     }
                 });
-            };
-            
-            // Check on scroll
-            window.addEventListener('scroll', checkVisibility);
-            
-            // Check on page load
-            checkVisibility();
+            }, {
+                threshold: 0.05,
+                rootMargin: '0px 0px -20px 0px'
+            });
+            animateElements.forEach(el => observer.observe(el));
+        } else {
+            // Fallback: show all immediately
+            animateElements.forEach(el => el.classList.add('visible'));
         }
     }
 
-    // Call the function on page load
     handleElementsAnimation();
 
-    // Update copyright year automatically
-    // Set current year in footer
+    // Update copyright year
     const yearElements = document.querySelectorAll('.copyright-year');
     const currentYear = new Date().getFullYear();
-    
     if (yearElements.length > 0) {
-        yearElements.forEach(element => {
-            element.textContent = currentYear;
-        });
+        yearElements.forEach(element => { element.textContent = currentYear; });
     }
-    
-    // Responsive projects/cards handling for touch devices
+
+    // Touch focus for cards
     const cards = document.querySelectorAll('.card');
-    
     if (cards.length > 0) {
         cards.forEach(card => {
             card.addEventListener('touchstart', function() {
                 this.classList.add('touch-focus');
             }, {passive: true});
-            
             card.addEventListener('touchend', function() {
-                setTimeout(() => {
-                    this.classList.remove('touch-focus');
-                }, 300);
+                setTimeout(() => { this.classList.remove('touch-focus'); }, 300);
             }, {passive: true});
         });
-    }
-    
-    // Animate elements when they come into view
-    const animateElements = document.querySelectorAll('.animate-on-scroll');
-    
-    if (animateElements.length > 0) {
-        const checkVisibility = function() {
-            animateElements.forEach(element => {
-                const elementPosition = element.getBoundingClientRect();
-                const windowHeight = window.innerHeight;
-                
-                if (elementPosition.top < windowHeight * 0.95) {
-                    element.classList.add('animate');
-                }
-            });
-        };
-        
-        // Check on scroll
-        window.addEventListener('scroll', checkVisibility);
-        
-        // Check on page load
-        checkVisibility();
     }
     
     // Form validation for contact form
