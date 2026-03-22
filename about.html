@@ -4,12 +4,15 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>iteam1 - About</title>
+		<meta name="description" content="Learn about iteam1 — a team of engineers, scientists, and developers passionate about AI, robotics, and software.">
 		<link rel="stylesheet" href="style.css">
 		<link rel="stylesheet" href="modern.css">
+		<link rel="stylesheet" href="enhance.css">
 		<link rel="icon" href="./assets/logo-removebg.png" type="image/x-icon">
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 	</head>
 	<body>
 		<div class="banner">
@@ -22,14 +25,14 @@
 				</div>
 				<ul>
 					<li><a href="index.html">Home</a></li>
-					<li><a href="about.html">About</a></li>
+					<li><a class="active" href="about.html">About</a></li>
 					<li><a href="#">News</a></li>
 					<li><a href="project.html">Projects</a></li>
 					<li><a href="contact.html">Contact</a></li>
 				</ul>
 			</div>
 		</div>
-		
+
 		<section class="about">
 			<div class="main">
 				<div class="image animate-on-scroll">
@@ -39,60 +42,87 @@
 					<h1>About Us</h1>
 					<h4>Small team, big ideas</h4>
 					<p>We apply cutting-edge technology to create innovative solutions.
-						<br>Our team includes engineers, scientists, designers, and developers working together to push the boundaries of what's possible.
+						Our team includes engineers, scientists, designers, and developers
+						working together to push the boundaries of what's possible.
 					</p>
-					<button type="button" onclick="location.href='./contact.html'"><span></span>Contact Us</button>
+					<!-- Mini stats -->
+					<div class="about-stats">
+						<div class="about-stat animate-on-scroll">
+							<span class="stat-number counter" data-target="10">0</span>
+							<span class="stat-label">Projects</span>
+						</div>
+						<div class="about-stat animate-on-scroll">
+							<span class="stat-number counter" data-target="4">0</span>
+							<span class="stat-label">Fields</span>
+						</div>
+						<div class="about-stat animate-on-scroll">
+							<span class="stat-number">100<span style="font-size:1.2rem">%</span></span>
+							<span class="stat-label">Passion</span>
+						</div>
+					</div>
+					<button type="button" onclick="location.href='./contact.html'" style="margin-top:25px">
+						<span></span>Contact Us
+					</button>
 				</div>
 			</div>
 		</section>
 
+		<div class="section-divider"></div>
+
 		<div class="title animate-on-scroll">
 			<h1>Our Expertise</h1>
 		</div>
-		
-		<section class="field">		
+
+		<section class="field">
 			<div class="card animate-on-scroll">
 				<div class="card-image field-1"></div>
-				<h2>AI & Machine Learning</h2>
+				<h2>AI &amp; Machine Learning</h2>
 				<p>We've developed numerous projects in machine learning and AI. Moving forward, iteam1 will focus on more competitions, innovative AI projects, and free contributions for the community.</p>
-				<a href="#">READ MORE</a>
+				<a href="#">Read More</a>
 			</div>
 			<div class="card animate-on-scroll">
 				<div class="card-image field-2"></div>
 				<h2>Data Science</h2>
-				<p>Data is everywhere and essential for progress. Our services include collecting, processing, and analyzing data to build predictive models and extract valuable insights from seemingly chaotic information.</p>
-				<a href="#">READ MORE</a>
+				<p>Data is everywhere and essential for progress. Our services include collecting, processing, and analyzing data to build predictive models and extract valuable insights.</p>
+				<a href="#">Read More</a>
 			</div>
 			<div class="card animate-on-scroll">
 				<div class="card-image field-3"></div>
 				<h2>Robotics</h2>
-				<p>With advances in AI, robots are becoming smarter. This journey is both our profession and passion. We integrate AI into robotics to enable machines to solve complex problems through artificial intelligence.</p>
-				<a href="#">READ MORE</a>
+				<p>With advances in AI, robots are becoming smarter. This journey is both our profession and passion. We integrate AI into robotics to enable machines to solve complex problems.</p>
+				<a href="#">Read More</a>
 			</div>
 			<div class="card animate-on-scroll">
 				<div class="card-image field-4"></div>
-				<h2>Software & Applications</h2>
-				<p>Our team includes top developers with extensive experience in software development, applications, and embedded systems. Our products serve multiple sectors including science, automation, e-commerce, and more.</p>
-				<a href="#">READ MORE</a>
+				<h2>Software &amp; Applications</h2>
+				<p>Our team includes top developers with extensive experience in software development, applications, and embedded systems serving science, automation, e-commerce, and more.</p>
+				<a href="#">Read More</a>
 			</div>
 		</section>
+
+		<div class="section-divider" style="margin-top:40px"></div>
 
 		<section class="join">
 			<h1 class="animate-on-scroll">Join Our Team</h1>
 			<p class="animate-on-scroll">
-				Are you passionate about coding and have innovative ideas? Looking to collaborate with talented developers and grow your skills?
-				<br>iteam1 welcomes passionate individuals! Send us an email at <a href="mailto:iteam1.official@gmail.com">iteam1.official@gmail.com</a> if you'd like to join our team!
+				Are you passionate about coding and have innovative ideas? Looking to collaborate with talented developers and grow your skills?<br>
+				iteam1 welcomes passionate individuals! Reach us at
+				<a href="mailto:iteam1.official@gmail.com">iteam1.official@gmail.com</a>
 			</p>
 			<div class="button-container">
-				<button type="button" onclick="location.href='./contact.html'" class="animate-on-scroll get-in-touch-btn"><span></span>Get in Touch</button>
+				<button type="button" onclick="location.href='./contact.html'" class="animate-on-scroll get-in-touch-btn">
+					<span></span>Get in Touch
+				</button>
 			</div>
 		</section>
 
 		<div class="partner animate-on-scroll">
 			<h1>Our Partners</h1>
-			<p>Coming soon...</p>
+			<div class="partner-coming-tag">
+				<i class="fas fa-clock"></i> Coming Soon
+			</div>
 		</div>
-		
+
 		<footer>
 			<div class="footer-content">
 				<div class="footer-logo">
@@ -111,14 +141,14 @@
 				<div class="footer-contact">
 					<h3>Contact Us</h3>
 					<p>Email: iteam1.official@gmail.com</p>
-					<p>Location: HCM.city, Vietnam</p>
+					<p>Location: HCM City, Vietnam</p>
 				</div>
 			</div>
 			<div class="footer-bottom">
 				<p>&copy; <span class="copyright-year">2023</span> iteam1. All Rights Reserved.</p>
 			</div>
 		</footer>
-		
+
 		<script src="script.js"></script>
 	</body>
 </html>

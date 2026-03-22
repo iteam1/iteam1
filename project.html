@@ -7,100 +7,121 @@
 		<meta name="description" content="Explore iteam1's innovative projects in AI, robotics, data science, and software development.">
 		<link rel="stylesheet" href="style.css">
 		<link rel="stylesheet" href="modern.css">
+		<link rel="stylesheet" href="enhance.css">
 		<link rel="icon" href="./assets/logo-removebg.png" type="image/x-icon">
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 	</head>
 	<body>
-		<div class='banner'>
-			<div class='navbar'>
-				<img src='./assets/logo-removebg.png' class='logo' alt="iteam1 Logo">
+		<div class="banner">
+			<div class="navbar">
+				<img src="./assets/logo-removebg.png" class="logo" alt="iteam1 Logo">
 				<div class="menu-toggle">
 					<span></span>
 					<span></span>
 					<span></span>
 				</div>
 				<ul>
-					<li><a href='index.html'>Home</a></li>
-					<li><a href='about.html'>About</a></li>
-					<li><a href='#'>News</a></li>
-					<li><a href='project.html'>Projects</a></li>
-					<li><a href='contact.html'>Contact</a></li>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="about.html">About</a></li>
+					<li><a href="#">News</a></li>
+					<li><a class="active" href="project.html">Projects</a></li>
+					<li><a href="contact.html">Contact</a></li>
 				</ul>
 			</div>
-			
-			<div class='projects'>
-				<h2 class="section-title animate-on-scroll">Our Latest Projects</h2>
-				
-				<div class="project-grid">
-					<div class="project-item animate-on-scroll">
-						<div class="project-header">
-						</div>
-						<div class="wrapper">
-							<iframe width="560" height="315" src="https://www.youtube.com/embed/--Cro5ScTkI" title="YouTube video player" loading="lazy" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-						</div>
-						<div class="project-description">
-							<p>Our advanced AI-powered robot that demonstrates autonomous navigation and object recognition capabilities. Using cutting-edge machine learning algorithms, Jetboy can navigate complex environments and interact with objects in real-time.</p>
-						</div>
+		</div>
+
+<div class="projects">
+			<div class="project-grid">
+				<!-- Project 1 -->
+				<div class="project-item animate-on-scroll" data-category="robotics ai">
+					<div class="project-header">
+						<span class="project-tag">Robotics · AI</span>
+						<h3 class="project-item-title">Jetboy — Autonomous Robot</h3>
 					</div>
-					
-					<div class="project-item animate-on-scroll">
-						<div class="project-header">
-						</div>
-						<div class="wrapper">
-							<iframe width="560" height="315" src="https://www.youtube.com/embed/9fVPktKmyIQ" title="YouTube video player" loading="lazy" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-						</div>
-						<div class="project-description">
-							<p>Showcasing our cutting-edge research in machine learning and artificial intelligence applications. Our team explores novel approaches to solve complex problems in computer vision, natural language processing, and robotics.</p>
-						</div>
+					<div class="wrapper">
+						<iframe width="560" height="315"
+							src="https://www.youtube.com/embed/--Cro5ScTkI"
+							title="Jetboy autonomous robot"
+							loading="lazy"
+							frameborder="0"
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+							allowfullscreen>
+						</iframe>
+					</div>
+					<div class="project-description">
+						<p>Our advanced AI-powered robot that demonstrates autonomous navigation and object recognition. Using cutting-edge machine learning algorithms, Jetboy can navigate complex environments and interact with objects in real-time.</p>
 					</div>
 				</div>
-				
-				<div class="project-showcase">
-					<h3 class="section-subtitle animate-on-scroll">Featured Projects</h3>
-					
-					<div class="showcase-grid">
-						<div class="showcase-item animate-on-scroll">
-							<div class="showcase-icon">
-								<img src="assets/ai.png" alt="AI Project">
-							</div>
-							<h4>Computer Vision</h4>
-							<p>Advanced image recognition systems for industrial applications, powered by deep learning algorithms and real-time processing capabilities.</p>
-						</div>
-						
-						<div class="showcase-item animate-on-scroll">
-							<div class="showcase-icon">
-								<img src="assets/data.png" alt="Data Project">
-							</div>
-							<h4>Data Analytics Platform</h4>
-							<p>Custom-built analytics tools for business intelligence, featuring interactive dashboards and predictive modeling.</p>
-						</div>
-						
-						<div class="showcase-item animate-on-scroll">
-							<div class="showcase-icon">
-								<img src="assets/robot.png" alt="Robotics Project">
-							</div>
-							<h4>Robotic Control Systems</h4>
-							<p>Next-generation control mechanisms for precision robotics, integrating AI for adaptive learning and optimization.</p>
-						</div>
-						
-						<div class="showcase-item animate-on-scroll">
-							<div class="showcase-icon">
-								<img src="assets/coding.png" alt="Software Project">
-							</div>
-							<h4>Cloud Applications</h4>
-							<p>Scalable, cloud-native solutions for enterprise clients, built with modern architectures and best practices.</p>
-						</div>
+
+				<!-- Project 2 -->
+				<div class="project-item animate-on-scroll" data-category="ai ml">
+					<div class="project-header">
+						<span class="project-tag">AI · Research</span>
+						<h3 class="project-item-title">Machine Learning Research</h3>
+					</div>
+					<div class="wrapper">
+						<iframe width="560" height="315"
+							src="https://www.youtube.com/embed/9fVPktKmyIQ"
+							title="ML Research showcase"
+							loading="lazy"
+							frameborder="0"
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+							allowfullscreen>
+						</iframe>
+					</div>
+					<div class="project-description">
+						<p>Showcasing our cutting-edge research in machine learning and AI applications. Our team explores novel approaches to computer vision, natural language processing, and robotics to solve complex real-world problems.</p>
 					</div>
 				</div>
 			</div>
-			
-			<div class='content'>
+
+			<!-- Featured Projects Showcase -->
+			<div class="project-showcase">
+				<h3 class="section-subtitle animate-on-scroll">Featured Projects</h3>
+
+				<div class="showcase-grid">
+					<div class="showcase-item animate-on-scroll" data-category="ai">
+						<div class="showcase-icon">
+							<img src="assets/ai.png" alt="AI Project">
+						</div>
+						<h4>Computer Vision</h4>
+						<p>Advanced image recognition systems for industrial applications, powered by deep learning and real-time processing.</p>
+					</div>
+
+					<div class="showcase-item animate-on-scroll" data-category="data">
+						<div class="showcase-icon">
+							<img src="assets/data.png" alt="Data Project">
+						</div>
+						<h4>Data Analytics Platform</h4>
+						<p>Custom-built analytics tools for business intelligence, featuring interactive dashboards and predictive modeling.</p>
+					</div>
+
+					<div class="showcase-item animate-on-scroll" data-category="robotics">
+						<div class="showcase-icon">
+							<img src="assets/robot.png" alt="Robotics Project">
+						</div>
+						<h4>Robotic Control Systems</h4>
+						<p>Next-generation control mechanisms for precision robotics, integrating AI for adaptive learning and optimization.</p>
+					</div>
+
+					<div class="showcase-item animate-on-scroll" data-category="software">
+						<div class="showcase-icon">
+							<img src="assets/coding.png" alt="Software Project">
+						</div>
+						<h4>Cloud Applications</h4>
+						<p>Scalable, cloud-native solutions for enterprise clients, built with modern architectures and best practices.</p>
+					</div>
+				</div>
+			</div>
+
+			<!-- GitHub CTA -->
+			<div class="content">
 				<div class="button-container animate-on-scroll">
-					<button type='button' onclick="location.href='https://github.com/iteam1'" class="github-button">
-						<span></span>
-						<svg class="github-icon" viewBox="0 0 24 24" width="24" height="24">
+					<button type="button" onclick="location.href='https://github.com/iteam1'" class="github-button">
+						<svg class="github-icon" viewBox="0 0 24 24" width="20" height="20">
 							<path fill="currentColor" d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.083-.73.083-.73 1.205.085 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.605-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/>
 						</svg>
 						More on GitHub
@@ -108,11 +129,11 @@
 				</div>
 			</div>
 		</div>
-		
+
 		<footer>
 			<div class="footer-content">
 				<div class="footer-logo">
-					<img src='./assets/logo-removebg.png' alt="iteam1 Logo">
+					<img src="./assets/logo-removebg.png" alt="iteam1 Logo">
 					<p>Small team, big ideas</p>
 				</div>
 				<div class="footer-links">
@@ -127,14 +148,14 @@
 				<div class="footer-contact">
 					<h3>Contact Us</h3>
 					<p>Email: iteam1.official@gmail.com</p>
-					<p>Location: HCM.city, Vietnam</p>
+					<p>Location: HCM City, Vietnam</p>
 				</div>
 			</div>
 			<div class="footer-bottom">
 				<p>&copy; <span class="copyright-year">2023</span> iteam1. All Rights Reserved.</p>
 			</div>
 		</footer>
-		
+
 		<script src="script.js"></script>
 	</body>
 </html>

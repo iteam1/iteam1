@@ -7,45 +7,123 @@
 		<meta name="description" content="iteam1 - A team of engineers, scientists, designers and developers dedicated to AI, robotics and software development.">
 		<link rel="stylesheet" href="style.css">
 		<link rel="stylesheet" href="modern.css">
+		<link rel="stylesheet" href="enhance.css">
 		<link rel="icon" href="./assets/logo-removebg.png" type="image/x-icon">
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 	</head>
 	<body>
-		<div class='banner'>
-			<div class='navbar'>
-				<img src='./assets/logo-removebg.png' class='logo' alt="iteam1 Logo">
+		<div class="banner hero-grid-bg">
+			<!-- Decorative glow orbs -->
+			<div class="glow-orb glow-orb-1"></div>
+			<div class="glow-orb glow-orb-2"></div>
+
+			<div class="navbar">
+				<img src="./assets/logo-removebg.png" class="logo" alt="iteam1 Logo">
 				<div class="menu-toggle">
 					<span></span>
 					<span></span>
 					<span></span>
 				</div>
 				<ul>
-					<li><a href='index.html'>Home</a></li>
-					<li><a href='about.html'>About</a></li>
-					<li><a href='#'>News</a></li>
-					<li><a href='project.html'>Projects</a></li>
-					<li><a href='contact.html'>Contact</a></li>
+					<li><a class="active" href="index.html">Home</a></li>
+					<li><a href="about.html">About</a></li>
+					<li><a href="#">News</a></li>
+					<li><a href="project.html">Projects</a></li>
+					<li><a href="contact.html">Contact</a></li>
 				</ul>
 			</div>
-			<div class='content'>
+
+			<div class="content">
 				<div class="content-container">
+					<p class="hero-label animate-on-scroll">// Welcome to</p>
 					<h2 class="animate-on-scroll">{ We are iteam1 }</h2>
-					<p class="animate-on-scroll">Innovating through AI, robotics, and software development.<br>Check our projects on GitHub and join us in building the future.
+					<p class="animate-on-scroll">
+						Innovating through AI, robotics, and software development.<br>
+						Check our projects on GitHub and join us in building the future.
 					</p>
 					<div class="button-group animate-on-scroll">
-						<button type='button' onclick="location.href='https://github.com/iteam1'"><span></span>GitHub</button>
-						<button type='button' onclick="location.href='about.html'"><span></span>Learn More</button>
+						<button type="button" onclick="location.href='https://github.com/iteam1'">
+							<span></span>
+							<i class="fab fa-github" style="margin-right:8px"></i>GitHub
+						</button>
+						<button type="button" onclick="location.href='about.html'">
+							<span></span>Learn More
+						</button>
+					</div>
+					<div class="scroll-indicator animate-on-scroll">
+						<span class="scroll-label">Scroll</span>
+						<svg viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" d="M12 5v14M5 12l7 7 7-7"/>
+						</svg>
 					</div>
 				</div>
 			</div>
 		</div>
-		
+
+		<!-- Stats Bar -->
+		<div class="stats-bar">
+			<div class="stat-item animate-on-scroll">
+				<span class="stat-number counter" data-target="10">0</span>
+				<span class="stat-label">Projects</span>
+			</div>
+			<div class="stat-item animate-on-scroll">
+				<span class="stat-number counter" data-target="4">0</span>
+				<span class="stat-label">Core Fields</span>
+			</div>
+			<div class="stat-item animate-on-scroll">
+				<span class="stat-number">HCM</span>
+				<span class="stat-label">Vietnam</span>
+			</div>
+			<div class="stat-item animate-on-scroll">
+				<span class="stat-number">∞</span>
+				<span class="stat-label">Ideas</span>
+			</div>
+		</div>
+
+		<div class="section-divider"></div>
+
+		<!-- What We Do Preview -->
+		<section class="preview-section">
+			<p class="preview-section-title animate-on-scroll">What We Do</p>
+			<div class="preview-grid">
+				<div class="preview-card animate-on-scroll">
+					<div class="preview-card-icon">
+						<img src="assets/ai.png" alt="AI">
+					</div>
+					<h3>AI &amp; Machine Learning</h3>
+					<p>Building intelligent systems that learn, adapt, and solve complex real-world problems at scale.</p>
+				</div>
+				<div class="preview-card animate-on-scroll">
+					<div class="preview-card-icon">
+						<img src="assets/data.png" alt="Data Science">
+					</div>
+					<h3>Data Science</h3>
+					<p>Turning raw data into actionable insights through analysis, visualization, and predictive modeling.</p>
+				</div>
+				<div class="preview-card animate-on-scroll">
+					<div class="preview-card-icon">
+						<img src="assets/robot.png" alt="Robotics">
+					</div>
+					<h3>Robotics</h3>
+					<p>Integrating AI with physical systems to build autonomous, adaptive machines that solve real challenges.</p>
+				</div>
+				<div class="preview-card animate-on-scroll">
+					<div class="preview-card-icon">
+						<img src="assets/coding.png" alt="Software">
+					</div>
+					<h3>Software &amp; Apps</h3>
+					<p>Developing robust applications for science, automation, e-commerce, and embedded systems.</p>
+				</div>
+			</div>
+		</section>
+
 		<footer>
 			<div class="footer-content">
 				<div class="footer-logo">
-					<img src='./assets/logo-removebg.png' alt="iteam1 Logo">
+					<img src="./assets/logo-removebg.png" alt="iteam1 Logo">
 					<p>Small team, big ideas</p>
 				</div>
 				<div class="footer-links">
@@ -60,14 +138,14 @@
 				<div class="footer-contact">
 					<h3>Contact Us</h3>
 					<p>Email: iteam1.official@gmail.com</p>
-					<p>Location: HCM.city, Vietnam</p>
+					<p>Location: HCM City, Vietnam</p>
 				</div>
 			</div>
 			<div class="footer-bottom">
 				<p>&copy; <span class="copyright-year">2023</span> iteam1. All Rights Reserved.</p>
 			</div>
 		</footer>
-		
+
 		<script src="script.js"></script>
 	</body>
 </html>
