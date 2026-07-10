@@ -323,30 +323,6 @@ button:hover {
   padding: 40px 0;
 }
 
-/* Field background images */
-.field-1 {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./assets/ai.png');
-  background-size: cover;
-  background-position: center;
-}
-
-.field-2 {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./assets/data.png');
-  background-size: cover;
-  background-position: center;
-}
-
-.field-3 {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./assets/robot.png');
-  background-size: cover;
-  background-position: center;
-}
-
-.field-4 {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./assets/application.png');
-  background-size: cover;
-  background-position: center;
-}
 
 @media (max-width: 1200px) {
   .card {

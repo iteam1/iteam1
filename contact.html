@@ -13,6 +13,8 @@
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="theme.css">
+		<script>try{var t=localStorage.getItem('theme');if(!t&&window.matchMedia&&matchMedia('(prefers-color-scheme: light)').matches)t='light';if(t==='light')document.documentElement.setAttribute('data-theme','light')}catch(e){}</script>
 	</head>
 	<body>
 		<div class="banner">
@@ -26,10 +28,12 @@
 				<ul>
 					<li><a href="index.html">Home</a></li>
 					<li><a href="about.html">About</a></li>
-					<li><a href="#">News</a></li>
 					<li><a href="project.html">Projects</a></li>
 					<li><a class="active" href="contact.html">Contact</a></li>
 				</ul>
+				<button type="button" class="theme-toggle" aria-label="Toggle dark/light mode" title="Toggle theme">
+					<i class="fas fa-sun"></i>
+				</button>
 			</div>
 		</div>
 

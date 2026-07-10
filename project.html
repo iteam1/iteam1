@@ -4,7 +4,7 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>iteam1 - Projects</title>
-		<meta name="description" content="Explore iteam1's innovative projects in AI, robotics, data science, and software development.">
+		<meta name="description" content="iteam1 projects — coming soon.">
 		<link rel="stylesheet" href="style.css">
 		<link rel="stylesheet" href="modern.css">
 		<link rel="stylesheet" href="enhance.css">
@@ -13,9 +13,15 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+		<link rel="stylesheet" href="theme.css">
+		<script>try{var t=localStorage.getItem('theme');if(!t&&window.matchMedia&&matchMedia('(prefers-color-scheme: light)').matches)t='light';if(t==='light')document.documentElement.setAttribute('data-theme','light')}catch(e){}</script>
 	</head>
 	<body>
-		<div class="banner">
+		<div class="banner hero-grid-bg">
+			<!-- Decorative glow orbs -->
+			<div class="glow-orb glow-orb-1"></div>
+			<div class="glow-orb glow-orb-2"></div>
+
 			<div class="navbar">
 				<img src="./assets/logo-removebg.png" class="logo" alt="iteam1 Logo">
 				<div class="menu-toggle">
@@ -26,98 +32,20 @@
 				<ul>
 					<li><a href="index.html">Home</a></li>
 					<li><a href="about.html">About</a></li>
-					<li><a href="#">News</a></li>
 					<li><a class="active" href="project.html">Projects</a></li>
 					<li><a href="contact.html">Contact</a></li>
 				</ul>
+				<button type="button" class="theme-toggle" aria-label="Toggle dark/light mode" title="Toggle theme">
+					<i class="fas fa-sun"></i>
+				</button>
+			</div>
+
+			<div class="content coming-soon">
+				<div class="content-container">
+					<h2 class="animate-on-scroll">Coming Soon</h2>
+				</div>
 			</div>
 		</div>
-
-<div class="projects">
-			<div class="project-grid">
-				<!-- Project 1 -->
-				<div class="project-item animate-on-scroll" data-category="robotics ai">
-					<div class="project-header">
-						<span class="project-tag">Robotics · AI</span>
-						<h3 class="project-item-title">Jetboy — Autonomous Robot</h3>
-					</div>
-					<div class="wrapper">
-						<iframe width="560" height="315"
-							src="https://www.youtube.com/embed/--Cro5ScTkI"
-							title="Jetboy autonomous robot"
-							loading="lazy"
-							frameborder="0"
-							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-							allowfullscreen>
-						</iframe>
-					</div>
-					<div class="project-description">
-						<p>Our advanced AI-powered robot that demonstrates autonomous navigation and object recognition. Using cutting-edge machine learning algorithms, Jetboy can navigate complex environments and interact with objects in real-time.</p>
-					</div>
-				</div>
-
-				<!-- Project 2 -->
-				<div class="project-item animate-on-scroll" data-category="ai ml">
-					<div class="project-header">
-						<span class="project-tag">AI · Research</span>
-						<h3 class="project-item-title">Machine Learning Research</h3>
-					</div>
-					<div class="wrapper">
-						<iframe width="560" height="315"
-							src="https://www.youtube.com/embed/9fVPktKmyIQ"
-							title="ML Research showcase"
-							loading="lazy"
-							frameborder="0"
-							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-							allowfullscreen>
-						</iframe>
-					</div>
-					<div class="project-description">
-						<p>Showcasing our cutting-edge research in machine learning and AI applications. Our team explores novel approaches to computer vision, natural language processing, and robotics to solve complex real-world problems.</p>
-					</div>
-				</div>
-			</div>
-
-			<!-- Featured Projects Showcase -->
-			<div class="project-showcase">
-				<h3 class="section-subtitle animate-on-scroll">Featured Projects</h3>
-
-				<div class="showcase-grid">
-					<div class="showcase-item animate-on-scroll" data-category="ai">
-						<div class="showcase-icon">
-							<img src="assets/ai.png" alt="AI Project">
-						</div>
-						<h4>Computer Vision</h4>
-						<p>Advanced image recognition systems for industrial applications, powered by deep learning and real-time processing.</p>
-					</div>
-
-					<div class="showcase-item animate-on-scroll" data-category="data">
-						<div class="showcase-icon">
-							<img src="assets/data.png" alt="Data Project">
-						</div>
-						<h4>Data Analytics Platform</h4>
-						<p>Custom-built analytics tools for business intelligence, featuring interactive dashboards and predictive modeling.</p>
-					</div>
-
-					<div class="showcase-item animate-on-scroll" data-category="robotics">
-						<div class="showcase-icon">
-							<img src="assets/robot.png" alt="Robotics Project">
-						</div>
-						<h4>Robotic Control Systems</h4>
-						<p>Next-generation control mechanisms for precision robotics, integrating AI for adaptive learning and optimization.</p>
-					</div>
-
-					<div class="showcase-item animate-on-scroll" data-category="software">
-						<div class="showcase-icon">
-							<img src="assets/coding.png" alt="Software Project">
-						</div>
-						<h4>Cloud Applications</h4>
-						<p>Scalable, cloud-native solutions for enterprise clients, built with modern architectures and best practices.</p>
-					</div>
-				</div>
-			</div>
-
-			</div>
 
 		<footer>
 			<div class="footer-content">

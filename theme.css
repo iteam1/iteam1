@@ -1,0 +1,481 @@
+/* ============================================================
+   THEME LAYER — dark/light mode + UI refinements
+   Loaded after style.css, modern.css and enhance.css.
+   Selectors here are specificity-hardened (html prefix,
+   :root[data-theme]) so they win over the older layers even if
+   a bundler or dev server reorders the stylesheets.
+   Dark is the default theme (no attribute); light mode
+   activates via <html data-theme="light">.
+   ============================================================ */
+
+html {
+  background: var(--background-dark);
+  /* Reserve the scrollbar gutter so the layout (and footer) doesn't
+     shift horizontally between long and short pages */
+  scrollbar-gutter: stable;
+}
+
+/* ------------------------------------------------------------
+   Theme toggle button (navbar)
+   ------------------------------------------------------------ */
+html .theme-toggle {
+  width: 26px;
+  height: 26px;
+  min-width: 26px;
+  padding: 0;
+  margin: 0 0 0 22px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 150, 136, 0.35);
+  background: rgba(0, 150, 136, 0.08);
+  color: var(--text-light);
+  font-size: 0.72rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  overflow: visible;
+}
+html .theme-toggle:hover {
+  background: var(--gradient-primary);
+  border-color: transparent;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 150, 136, 0.3);
+}
+
+/* Desktop: keep menu + toggle grouped at the right edge */
+html .navbar ul {
+  margin-left: auto;
+}
+
+/* ------------------------------------------------------------
+   Slim, elegant navbar — full-width hairline bar instead of
+   the old tall rounded box
+   ------------------------------------------------------------ */
+html .navbar {
+  width: 100%;
+  height: 52px;
+  padding: 0 5%;
+  border-radius: 0;
+  background-color: rgba(10, 14, 13, 0.72);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(0, 150, 136, 0.18);
+}
+html .logo {
+  width: clamp(30px, 3.5vw, 38px);
+}
+html .logo:hover {
+  transform: scale(1.06);
+}
+html .navbar ul li {
+  margin: 0 14px;
+}
+html .navbar ul li a {
+  font-size: 0.78rem;
+  letter-spacing: 2px;
+  opacity: 0.85;
+}
+html .navbar ul li a:hover,
+html .navbar ul li a.active {
+  opacity: 1;
+}
+@media (max-width: 768px) {
+  html .navbar {
+    height: 44px;
+    padding: 0 14px;
+  }
+  html .navbar ul {
+    top: 44px !important;
+  }
+  html .navbar ul li {
+    margin: 20px 0;
+  }
+  html .theme-toggle {
+    order: 2;
+    margin-left: auto;
+    width: 24px;
+    height: 24px;
+    min-width: 24px;
+    font-size: 0.62rem;
+  }
+  /* Compact hamburger / close icon */
+  html .menu-toggle {
+    order: 3;
+    margin-left: 14px;
+    width: 20px;
+    height: 14px;
+  }
+  html .menu-toggle span {
+    height: 2px;
+  }
+  html .menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(4px, 4px);
+  }
+  html .menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(4px, -4px);
+  }
+}
+
+/* ------------------------------------------------------------
+   UI polish (applies to both themes)
+   ------------------------------------------------------------ */
+
+/* Solid mobile nav drawer — fully opaque so hero content never
+   bleeds through (backdrop-filter is unreliable nested inside the
+   blurred navbar, so the drawer uses a plain solid background) */
+@media (max-width: 768px) {
+  html .navbar ul {
+    background-color: #0e1316;
+    border-left: 1px solid rgba(0, 150, 136, 0.25);
+    box-shadow: -18px 0 45px rgba(0, 0, 0, 0.55);
+    width: 170px;
+    padding-top: 14px;
+    transition: right 0.4s ease, box-shadow 0.4s ease;
+  }
+  /* Dim the page behind the open drawer */
+  html .navbar ul.active {
+    box-shadow: -18px 0 45px rgba(0, 0, 0, 0.55), 0 0 0 100vmax rgba(0, 0, 0, 0.5);
+  }
+  html .navbar ul li {
+    margin: 14px 0;
+  }
+}
+
+/* Sticky footer: on short pages the content stretches so the
+   footer meets the bottom edge — no bare <html> strip below it */
+html body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+html body > main,
+html body > .banner.hero-grid-bg {
+  flex: 1 0 auto;
+}
+
+/* Order-independent guards against the legacy globals in
+   style.css (they must never win, regardless of stylesheet
+   order). The button fill-hover spans are restored by the
+   !important rules in enhance.css, which outrank this reset. */
+html span {
+  position: static;
+  width: auto;
+  height: auto;
+  background: transparent;
+  border-radius: 0;
+  z-index: auto;
+  transition: none;
+}
+html .content p {
+  line-height: 1.8;
+}
+html .navbar ul li a {
+  color: var(--text-light);
+}
+
+/* ------------------------------------------------------------
+   Fluid responsive sizing — components scale continuously with
+   the viewport instead of jumping at breakpoints
+   ------------------------------------------------------------ */
+
+/* Global rem scale: 16px on desktop, eases down to 14px on phones */
+html {
+  font-size: clamp(14px, 12.5px + 0.4vw, 16px);
+}
+
+/* Hero */
+html .banner.hero-grid-bg .content {
+  padding: clamp(48px, 8vw, 80px) 20px clamp(56px, 9vw, 100px) !important;
+}
+html .hero-label {
+  font-size: clamp(0.65rem, 0.55rem + 0.4vw, 0.78rem);
+  letter-spacing: clamp(2px, 0.4vw, 4px);
+}
+html .content h2 {
+  font-size: clamp(1.5rem, 1rem + 3.2vw, 3rem) !important;
+}
+html .content p {
+  font-size: clamp(0.9rem, 0.75rem + 0.6vw, 1.2rem);
+}
+html .content button {
+  width: auto;
+  min-width: clamp(120px, 24vw, 190px);
+  padding: clamp(9px, 1vw, 14px) clamp(16px, 2.6vw, 30px);
+  font-size: clamp(0.78rem, 0.68rem + 0.35vw, 1rem);
+}
+/* Projects page — centered "coming soon" on the grid */
+html .content.coming-soon {
+  padding: clamp(120px, 24vh, 240px) 20px clamp(140px, 28vh, 280px) !important;
+}
+
+/* Stats bar */
+html .stats-bar {
+  padding: clamp(24px, 4vw, 50px) clamp(12px, 2vw, 20px) clamp(20px, 3.5vw, 40px);
+}
+html .stat-item {
+  padding: 10px clamp(14px, 4vw, 50px);
+}
+html .stat-number {
+  font-size: clamp(1.5rem, 0.9rem + 2.5vw, 2.8rem);
+}
+html .stat-label {
+  font-size: clamp(0.58rem, 0.5rem + 0.35vw, 0.72rem);
+  letter-spacing: clamp(1.5px, 0.3vw, 3px);
+}
+
+/* Contact page */
+html .contact h3 {
+  font-size: clamp(1.25rem, 1rem + 1vw, 1.8rem);
+}
+html .contact-left,
+html .contact-right {
+  padding: clamp(20px, 4vw, 40px) !important;
+}
+html .qr-code img {
+  width: clamp(100px, 18vw, 150px);
+  height: clamp(100px, 18vw, 150px);
+}
+/* No boxy gray backdrop behind the QR code — just the code + caption */
+html .qr-code {
+  background: transparent;
+  padding: 0;
+}
+
+/* Footer */
+html footer {
+  padding: clamp(36px, 6vw, 60px) 5% 20px;
+}
+html .footer-logo {
+  align-items: center;
+  text-align: center;
+}
+html .footer-logo img {
+  width: clamp(56px, 7vw, 80px);
+}
+
+/* ------------------------------------------------------------
+   About page — team avatars (GitHub)
+   ------------------------------------------------------------ */
+html .team-section {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: clamp(40px, 7vw, 80px) 20px clamp(60px, 9vw, 100px);
+}
+html .team-label {
+  text-align: center;
+  font-size: clamp(1.5rem, 1rem + 2.2vw, 2.4rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: clamp(2px, 0.5vw, 6px);
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: clamp(28px, 5vw, 50px);
+  opacity: 1;
+  font-family: var(--font-secondary);
+}
+html .team-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: clamp(16px, 3.5vw, 34px);
+}
+html .member-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  min-width: clamp(96px, 14vw, 130px);
+  text-decoration: none;
+  transition: transform 0.35s ease;
+}
+html .member-card:hover {
+  transform: translateY(-5px);
+}
+html .member-avatar {
+  width: clamp(60px, 10vw, 92px);
+  height: clamp(60px, 10vw, 92px);
+  border-radius: 50%;
+  border: 2px solid rgba(0, 150, 136, 0.45);
+  padding: 3px;
+  object-fit: cover;
+  transition: border-color 0.35s ease, box-shadow 0.35s ease, transform 0.35s ease;
+}
+html .member-card:hover .member-avatar {
+  border-color: var(--accent);
+  box-shadow: 0 0 22px rgba(0, 229, 215, 0.35);
+  transform: scale(1.05);
+}
+html .member-name {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-light);
+  font-family: var(--font-secondary);
+  font-size: clamp(0.68rem, 0.6rem + 0.3vw, 0.82rem);
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  overflow-wrap: anywhere;
+  text-align: center;
+  opacity: 0.85;
+  transition: opacity 0.3s ease;
+}
+html .member-card:hover .member-name {
+  opacity: 1;
+}
+html .member-name i {
+  color: var(--primary-light);
+  font-size: 0.95em;
+}
+
+/* Visible keyboard focus */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+}
+
+::selection {
+  background: var(--primary);
+  color: #fff;
+}
+
+/* ------------------------------------------------------------
+   LIGHT THEME
+   Variable flips do most of the work; the rest are targeted
+   overrides for colors hard-coded in the older CSS layers.
+   :root[data-theme="light"] outranks the :root block in
+   modern.css regardless of stylesheet order.
+   ------------------------------------------------------------ */
+:root[data-theme="light"] {
+  --text-light: #14201e;                /* main text on light bg */
+  --text-dark: #ffffff;
+  --background-dark: #f4f7f7;           /* page background */
+  --background-card: #ffffff;           /* footer / cards */
+  --primary-light: #00796b;             /* teal accents need to darken on light */
+  --accent: #00a99b;
+  --gradient-primary: linear-gradient(135deg, #00796b, #009688);
+}
+
+:root[data-theme="light"] body {
+  background: var(--background-dark);
+}
+
+/* Navbar */
+:root[data-theme="light"] .navbar {
+  background-color: rgba(255, 255, 255, 0.78);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+}
+:root[data-theme="light"] .menu-toggle span {
+  background-color: #14201e;
+}
+@media (max-width: 768px) {
+  :root[data-theme="light"] .navbar ul {
+    background-color: #ffffff;
+    border-left: 1px solid rgba(0, 121, 107, 0.2);
+    box-shadow: -18px 0 45px rgba(20, 60, 55, 0.18);
+  }
+  :root[data-theme="light"] .navbar ul.active {
+    box-shadow: -18px 0 45px rgba(20, 60, 55, 0.18), 0 0 0 100vmax rgba(20, 40, 38, 0.35);
+  }
+}
+
+/* Hero grid + buttons */
+:root[data-theme="light"] .hero-grid-bg::after {
+  background-image:
+    linear-gradient(rgba(0, 121, 107, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 121, 107, 0.08) 1px, transparent 1px);
+}
+:root[data-theme="light"] .hero-grid-bg::before {
+  background-image:
+    linear-gradient(rgba(0, 150, 136, 0.4) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 150, 136, 0.4) 1px, transparent 1px);
+}
+:root[data-theme="light"] .content {
+  color: var(--text-light);
+}
+:root[data-theme="light"] .content button {
+  color: var(--text-light);
+}
+:root[data-theme="light"] .content button:hover {
+  color: #fff;
+}
+
+/* Stats bar */
+:root[data-theme="light"] .stat-label {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+/* Contact box + form */
+:root[data-theme="light"] .contact-box {
+  background: #ffffff;
+  border-color: rgba(0, 121, 107, 0.15) !important;
+  box-shadow: 0 8px 30px rgba(20, 60, 55, 0.08);
+}
+:root[data-theme="light"] .contact-left {
+  background: rgba(0, 150, 136, 0.02);
+  border-right: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
+:root[data-theme="light"] .contact-right {
+  background: rgba(0, 150, 136, 0.05);
+}
+:root[data-theme="light"] .contact h3,
+:root[data-theme="light"] .contact-info-content h4,
+:root[data-theme="light"] .social-links h4 {
+  color: var(--text-light);
+}
+:root[data-theme="light"] .contact-info-content p,
+:root[data-theme="light"] .contact-info-content a {
+  color: rgba(0, 0, 0, 0.65);
+}
+:root[data-theme="light"] .float-group input,
+:root[data-theme="light"] .float-group textarea {
+  background: rgba(0, 0, 0, 0.03) !important;
+  border: 1px solid rgba(0, 0, 0, 0.15) !important;
+  color: #14201e !important;
+}
+:root[data-theme="light"] .float-group input:focus,
+:root[data-theme="light"] .float-group textarea:focus {
+  background: rgba(0, 150, 136, 0.04) !important;
+  border-color: var(--primary) !important;
+}
+:root[data-theme="light"] .float-group label {
+  color: rgba(0, 0, 0, 0.5);
+}
+:root[data-theme="light"] .social-btn {
+  color: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.04);
+  border-color: rgba(0, 0, 0, 0.12);
+}
+:root[data-theme="light"] .social-btn:hover {
+  color: #fff;
+}
+:root[data-theme="light"] .qr-code p {
+  color: rgba(0, 0, 0, 0.65);
+}
+@media (max-width: 768px) {
+  :root[data-theme="light"] .contact-left {
+    border-right: none !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
+  }
+}
+
+/* Footer */
+:root[data-theme="light"] footer::before {
+  background: linear-gradient(90deg, transparent, rgba(0, 121, 107, 0.4), rgba(0, 150, 136, 0.3), transparent);
+}
+:root[data-theme="light"] .footer-links ul li a,
+:root[data-theme="light"] .footer-contact p {
+  color: rgba(0, 0, 0, 0.55);
+}
+:root[data-theme="light"] .footer-links ul li a:hover {
+  color: var(--primary);
+}
+:root[data-theme="light"] .footer-bottom {
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  color: rgba(0, 0, 0, 0.4);
+}

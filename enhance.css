@@ -139,20 +139,6 @@ button, .filter-btn {
   padding: 50px 20px 40px;
   position: relative;
 }
-.stats-bar::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 8%; right: 8%;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(0,150,136,0.5), rgba(0,229,215,0.4), transparent);
-}
-.stats-bar::after {
-  content: '';
-  position: absolute;
-  bottom: 0; left: 8%; right: 8%;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(0,150,136,0.2), transparent);
-}
 .stat-item {
   text-align: center;
   padding: 10px 50px;
@@ -1134,9 +1120,12 @@ button:hover > span:first-child:not(.btn-text):not(.scroll-label) {
   }
 }
 
-/* M13: Prevent horizontal overflow site-wide */
+/* M13: Prevent horizontal overflow site-wide.
+   `clip` (not `hidden`) — hidden creates a scroll container on the
+   ancestor, which silently disables the navbar's position:sticky. */
 html, body {
   overflow-x: hidden;
+  overflow-x: clip;
   max-width: 100vw;
 }
 

@@ -49,21 +49,6 @@ body{
 
 }
 
-.navbar ul li::after{
-	content: '';
-	height: 3px;
-	width: 0;
-	background: #009688;
-	position: absolute;
-	left: 0;
-	bottom: -10px;
-	transition: 0.5s;
-}
-
-.navbar ul li:hover::after{
-	width: 100%;
-}
-
 .content{
 	width: 100%;
 /*	position: absolute;*/
@@ -362,26 +347,6 @@ tr td{
 	margin-bottom: 15px;
 	background-size: cover;
 /*	border-radius: 15px 15px 0 0;*/
-}
-
-.field-1 {
-	background-image: url('assets/ai.png');
-	width: auto;
-}
-
-.field-2 {
-	background-image: url('assets/data.png');
-	width: auto;
-}
-
-.field-3 {
-	background-image: url('assets/robot.png');
-	width: auto;
-}
-
-.field-4 {
-	background-image: url('assets/coding.png');
-	width: auto;
 }
 
 .title{

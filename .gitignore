@@ -17,3 +17,6 @@ Thumbs.db
 
 # Logs
 *.log
+
+# Playwright MCP transient output
+.playwright-mcp/

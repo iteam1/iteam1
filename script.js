@@ -1,6 +1,38 @@
 // Main JavaScript file for iteam1 website
 
 document.addEventListener('DOMContentLoaded', function() {
+    // Dark/light theme toggle
+    const themeToggle = document.querySelector('.theme-toggle');
+    if (themeToggle) {
+        const icon = themeToggle.querySelector('i');
+        const setIcon = () => {
+            const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+            icon.className = isLight ? 'fas fa-moon' : 'fas fa-sun';
+        };
+        setIcon();
+        themeToggle.addEventListener('click', () => {
+            const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+            if (isLight) {
+                document.documentElement.removeAttribute('data-theme');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'light');
+            }
+            try { localStorage.setItem('theme', isLight ? 'dark' : 'light'); } catch (e) {}
+            setIcon();
+        });
+
+        // Sync theme across other open tabs/pages of the site
+        window.addEventListener('storage', function(e) {
+            if (e.key !== 'theme') return;
+            if (e.newValue === 'light') {
+                document.documentElement.setAttribute('data-theme', 'light');
+            } else {
+                document.documentElement.removeAttribute('data-theme');
+            }
+            setIcon();
+        });
+    }
+
     // Mobile menu handling
     const menuToggle = document.querySelector('.menu-toggle');
     const navbarMenu = document.querySelector('.navbar ul');
@@ -221,7 +253,12 @@ document.addEventListener('DOMContentLoaded', function() {
             canvas.height = heroGrid.offsetHeight;
         }
         resize();
-        new ResizeObserver(resize).observe(heroGrid);
+        // Defer to the next frame — resizing the canvas synchronously inside
+        // the observer callback triggers "ResizeObserver loop completed with
+        // undelivered notifications" errors in dev-server overlays.
+        new ResizeObserver(function() {
+            requestAnimationFrame(resize);
+        }).observe(heroGrid);
 
         let mx = -9999, my = -9999;
         let sparks = [], traces = [];
