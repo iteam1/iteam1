@@ -183,7 +183,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const heroGrid = document.querySelector('.hero-grid-bg');
         if (!heroGrid) return;
 
-        const GRID = 55;
+        // Grid cell size must match the CSS grid overlay (smaller on phones)
+        const GRID = window.innerWidth <= 768 ? 34 : 55;
         const canvas = document.createElement('canvas');
         canvas.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:2;';
         heroGrid.appendChild(canvas);
