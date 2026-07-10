@@ -68,27 +68,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            if (this.getAttribute('href') !== '#') {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                    
-                    // Close mobile menu if open
-                    if (navbarMenu && navbarMenu.classList.contains('active')) {
-                        navbarMenu.classList.remove('active');
-                    }
-                }
-            }
-        });
-    });
-    
     // Animate elements when they come into view — IntersectionObserver for reliability
     function handleElementsAnimation() {
         const animateElements = document.querySelectorAll('.animate-on-scroll');
@@ -122,19 +101,6 @@ document.addEventListener('DOMContentLoaded', function() {
         yearElements.forEach(element => { element.textContent = currentYear; });
     }
 
-    // Touch focus for cards
-    const cards = document.querySelectorAll('.card');
-    if (cards.length > 0) {
-        cards.forEach(card => {
-            card.addEventListener('touchstart', function() {
-                this.classList.add('touch-focus');
-            }, {passive: true});
-            card.addEventListener('touchend', function() {
-                setTimeout(() => { this.classList.remove('touch-focus'); }, 300);
-            }, {passive: true});
-        });
-    }
-    
     // Form validation for contact form
     const contactForm = document.querySelector('.contact form');
     
@@ -210,31 +176,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }, { threshold: 0.5 });
 
         counters.forEach(c => counterObserver.observe(c));
-    }
-
-    // Project category filter
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    if (filterBtns.length > 0) {
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', function() {
-                filterBtns.forEach(b => b.classList.remove('active'));
-                this.classList.add('active');
-                const filter = this.getAttribute('data-filter');
-                const items = document.querySelectorAll('.project-item, .showcase-item');
-                items.forEach(item => {
-                    const cat = item.getAttribute('data-category') || '';
-                    if (filter === 'all' || cat.includes(filter)) {
-                        item.style.opacity = '1';
-                        item.style.transform = '';
-                        item.style.pointerEvents = '';
-                    } else {
-                        item.style.opacity = '0.2';
-                        item.style.transform = 'scale(0.97)';
-                        item.style.pointerEvents = 'none';
-                    }
-                });
-            });
-        });
     }
 
     // Fancy grid sparkle + line trace effect
@@ -373,7 +314,7 @@ document.addEventListener('DOMContentLoaded', function() {
     })();
 
     // Spotlight card hover effect (Devin.ai-style)
-    const spotlightCards = document.querySelectorAll('.preview-card, .project-item, .showcase-item, .contact-box');
+    const spotlightCards = document.querySelectorAll('.contact-box');
     spotlightCards.forEach(card => {
         card.addEventListener('mousemove', function(e) {
             const rect = this.getBoundingClientRect();
@@ -388,33 +329,4 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Projects video lazy loading
-    const videos = document.querySelectorAll('iframe[src*="youtube.com"]');
-    
-    if (videos.length > 0) {
-        const loadVideo = function(video) {
-            const src = video.getAttribute('src');
-            if (src && src.indexOf('autoplay=1') === -1) {
-                video.setAttribute('src', src.replace('?', '?autoplay=0&'));
-            }
-        };
-        
-        const handleIntersection = function(entries, observer) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    loadVideo(entry.target);
-                    observer.unobserve(entry.target);
-                }
-            });
-        };
-        
-        const observer = new IntersectionObserver(handleIntersection, {
-            rootMargin: '0px',
-            threshold: 0.1
-        });
-        
-        videos.forEach(video => {
-            observer.observe(video);
-        });
-    }
 });

@@ -79,8 +79,7 @@ html .navbar ul li a {
 html .navbar ul li a:hover,
 html .navbar ul li a.active {
   opacity: 1;
-}
-@media (max-width: 768px) {
+}@media (max-width: 768px) {
   html .navbar {
     height: 44px;
     padding: 0 14px;
@@ -142,16 +141,28 @@ html .navbar ul li a.active {
   }
 }
 
-/* Sticky footer: on short pages the content stretches so the
-   footer meets the bottom edge — no bare <html> strip below it */
+/* Consistent footer position: every page's content area is exactly
+   one viewport tall (taller only if its content needs more), so the
+   footer starts at the same spot — the fold — on every page */
 html body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
-html body > main,
 html body > .banner.hero-grid-bg {
   flex: 1 0 auto;
+  min-height: 100vh;
+}
+html body > main {
+  flex: 1 0 auto;
+  min-height: calc(100vh - 52px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}@media (max-width: 768px) {
+  html body > main {
+    min-height: calc(100vh - 44px);
+  }
 }
 
 /* Order-independent guards against the legacy globals in
@@ -204,9 +215,19 @@ html .content button {
   padding: clamp(9px, 1vw, 14px) clamp(16px, 2.6vw, 30px);
   font-size: clamp(0.78rem, 0.68rem + 0.35vw, 1rem);
 }
-/* Projects page — centered "coming soon" on the grid */
-html .content.coming-soon {
-  padding: clamp(120px, 24vh, 240px) 20px clamp(140px, 28vh, 280px) !important;
+/* Grid-hero pages (home, projects): the banner fills exactly the
+   space above the footer, and the hero content centers in it — so
+   the footer sits at the same position on every page */
+html .banner.hero-grid-bg {
+  display: flex;
+  flex-direction: column;
+}
+html .banner.hero-grid-bg .content {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(20px, 4vh, 60px) 20px !important;
 }
 
 /* Stats bar */
@@ -345,11 +366,10 @@ textarea:focus-visible {
 }
 
 /* ------------------------------------------------------------
-   LIGHT THEME
-   Variable flips do most of the work; the rest are targeted
-   overrides for colors hard-coded in the older CSS layers.
-   :root[data-theme="light"] outranks the :root block in
-   modern.css regardless of stylesheet order.
+   LIGHT THEME — variable flips do most of the work; the rest are
+   targeted overrides for hard-coded colors in the older layers.
+   root-with-attribute outranks the plain root block regardless of
+   stylesheet order.
    ------------------------------------------------------------ */
 :root[data-theme="light"] {
   --text-light: #14201e;                /* main text on light bg */
@@ -372,8 +392,7 @@ textarea:focus-visible {
 }
 :root[data-theme="light"] .menu-toggle span {
   background-color: #14201e;
-}
-@media (max-width: 768px) {
+}@media (max-width: 768px) {
   :root[data-theme="light"] .navbar ul {
     background-color: #ffffff;
     border-left: 1px solid rgba(0, 121, 107, 0.2);
@@ -456,8 +475,7 @@ textarea:focus-visible {
 }
 :root[data-theme="light"] .qr-code p {
   color: rgba(0, 0, 0, 0.65);
-}
-@media (max-width: 768px) {
+}@media (max-width: 768px) {
   :root[data-theme="light"] .contact-left {
     border-right: none !important;
     border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
